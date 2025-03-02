@@ -1,4 +1,4 @@
-import {Dayjs} from 'dayjs';
+import dayjs from 'dayjs';
 
 /**
  * 格式化日期
@@ -7,7 +7,7 @@ import {Dayjs} from 'dayjs';
  * @returns 格式化后的日期字符串
  */
 export function formatDate(date: Date | string, format: string = 'YYYY-MM-DD'): string {
-  return new Dayjs(date).format(format);
+  return dayjs(date).format(format);
 }
 
 /**
@@ -17,8 +17,8 @@ export function formatDate(date: Date | string, format: string = 'YYYY-MM-DD'): 
  * @returns 天数差
  */
 export function daysBetween(startDate: Date | string, endDate: Date | string): number {
-  const start = new Dayjs(startDate);
-  const end = new Dayjs(endDate);
+  const start = dayjs(startDate);
+  const end = dayjs(endDate);
   return end.diff(start, 'day');
 }
 
@@ -34,7 +34,7 @@ export function addToDate(
   amount: number, 
   unit: 'day' | 'week' | 'month' | 'year' = 'day'
 ): Date {
-  return new Dayjs(date).add(amount, unit).toDate();
+  return dayjs(date).add(amount, unit).toDate();
 }
 
 /**
@@ -49,8 +49,8 @@ export function isDateInRange(
   startDate: Date | string, 
   endDate: Date | string
 ): boolean {
-  const checkDate = new Dayjs(date);
-  return checkDate.isAfter(new Dayjs(startDate)) && checkDate.isBefore(new Dayjs(endDate));
+  const checkDate = dayjs(date);
+  return checkDate.isAfter(dayjs(startDate)) && checkDate.isBefore(dayjs(endDate));
 }
 
 /**
@@ -59,7 +59,7 @@ export function isDateInRange(
  * @returns 日期开始时间
  */
 export function startOfDay(date: Date | string = new Date()): Date {
-  return new Dayjs(date).startOf('day').toDate();
+  return dayjs(date).startOf('day').toDate();
 }
 
 /**
@@ -68,5 +68,5 @@ export function startOfDay(date: Date | string = new Date()): Date {
  * @returns 日期结束时间
  */
 export function endOfDay(date: Date | string = new Date()): Date {
-  return new Dayjs(date).endOf('day').toDate();
+  return dayjs(date).endOf('day').toDate();
 }

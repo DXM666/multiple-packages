@@ -18,7 +18,9 @@
       "@multiple-packages/utils": ["utils/src/index.ts"],
       "@multiple-packages/common": ["common/src/index.ts"]
     },
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "exclude": ["node_modules", "tmp"]
 }
