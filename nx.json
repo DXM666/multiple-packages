@@ -1,27 +1,19 @@
 {
   "npmScope": "multiple-packages",
-  "affected": {
-    "defaultBase": "main"
-  },
+  "affected": { "defaultBase": "main" },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test"]
+        "cacheableOperations": ["build", "lint", "test"],
+        "accessToken": "NjJmYTcyODUtZDljYS00ODBjLWIzMDMtM2IxODJkOTFhNWVlfHJlYWQtd3JpdGU="
       }
     }
   },
   "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
-    },
-    "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
-    }
+    "build": { "dependsOn": ["^build"], "inputs": ["production", "^production"] },
+    "test": { "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"] },
+    "lint": { "inputs": ["default", "{workspaceRoot}/.eslintrc.json"] }
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
@@ -34,8 +26,5 @@
     ],
     "sharedGlobals": []
   },
-  "workspaceLayout": {
-    "appsDir": "",
-    "libsDir": ""
-  }
+  "workspaceLayout": { "appsDir": "", "libsDir": "" }
 }
