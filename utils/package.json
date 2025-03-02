@@ -1,0 +1,22 @@
+{
+  "name": "@multiple-packages/utils",
+  "version": "0.1.0",
+  "description": "公共方法库",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "lodash": "^4.17.21"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "outputs": ["{workspaceRoot}/dist/utils"]
+      }
+    }
+  }
+}

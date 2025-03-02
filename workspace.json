@@ -1,0 +1,71 @@
+{
+  "version": 2,
+  "projects": {
+    "utils": {
+      "root": "utils",
+      "sourceRoot": "utils/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/js:tsc",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/utils",
+            "main": "utils/src/index.ts",
+            "tsConfig": "utils/tsconfig.json",
+            "assets": ["utils/*.md"]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["utils/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/utils"],
+          "options": {
+            "jestConfig": "utils/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "common": {
+      "root": "common",
+      "sourceRoot": "common/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/js:tsc",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/common",
+            "main": "common/src/index.ts",
+            "tsConfig": "common/tsconfig.json",
+            "assets": ["common/*.md"]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["common/**/*.{ts,tsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["{workspaceRoot}/coverage/common"],
+          "options": {
+            "jestConfig": "common/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    }
+  }
+}
